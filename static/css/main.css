@@ -1,0 +1,10 @@
+body {
+    font-family: 'Teko', sans-serif;
+    text-align: center;
+    background-color: #A2DBFA;
+    color: #152D35;
+}
+
+.main-title {
+    font-size: 60px;
+}
