@@ -1,10 +1,50 @@
+:root {
+    --dark: #000000;
+    --white: #CAB8FF;
+}
+
 body {
     font-family: 'Teko', sans-serif;
     text-align: center;
-    background-color: #A2DBFA;
-    color: #152D35;
+    justify-content: center;
+}
+
+#main-title {
+    font-size: x-large;
+    margin: 0;
+}
+
+#main-options {
+}
+
+#main-results {
+}
+
+#main-footer {
+}
+
+.dark-section {
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+.white-section {
+    background-color: var(--white);
+    color: var(--dark);
+}
+
+.padded-section {
+    padding: 1%;
 }
 
 .main-title {
     font-size: 60px;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.dropdown {
+    margin: auto 40px;
+    width: 150px;
+    text-align: center;
 }

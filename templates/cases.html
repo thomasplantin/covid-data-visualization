@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>Cases</title>
+New Cases
+{% endblock %}
+
+{% block filter %}  
+<option value="./cases">New Cases</option>
+<option value="./deaths">Deaths</option>
 {% endblock %}
 
 {% block body %}
-<h2>Cases</h2>
+<div>
+    <!-- {{data}} -->
+</div>
 {% endblock %}

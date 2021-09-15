@@ -9,17 +9,74 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-        {% block head %}{% endblock %}
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="./../static/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./../static/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./../static/favicon/favicon-16x16.png">
+        <link rel="manifest" href="./../static/favicon/site.webmanifest">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- My stuff -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <title>COVID-19 Data - {% block head %}{% endblock %}</title>
     </head>
     <body>
-        <div class="main-container">
+        <!-- Main Title -->
+        <section id="main-title" class="dark-section main-title padded-section">
             <h1 class="main-title">COVID-19 Data Visualization</h1>
+        </section>
+        <!-- Main Options -->
+        <section id="main-options" class="white-section padded-section">
+            <h3>Options</h3>
+            <table align="center">
+                <tr>
+                    <th>Filter</th>
+                    <th>Country</th>
+                    <th>Time Range</th>
+                    <th></th>
+                </tr>
+        
+                <tr>
+                    <td>
+                        <select class="dropdown" id="ddmenuFilter" onchange="location = this.value;">
+                            {% block filter %} {% endblock %}
+                        </select>
+                    </td>
+                    <td>
+                        <select class="dropdown" id="ddmenuCountry">
+                            <option value="newCases">New Cases</option>
+                            <option value="deaths">Deaths</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="dropdown" id="ddmenuTime">
+                            <option value="allTime">All Time</option>
+                            <option value="weeks1">1 Week</option>
+                            <option value="weeks2">2 Weeks</option>
+                            <option value="days30">30 Days</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <!-- Main Results -->
+        <section id="main-results" class="dark-section padded-section">
+            <h3 class="main-results">Results</h3>
             {% block body %}{% endblock %}
-        </div>
+        </section>
+        <!-- Main Footer -->
+        <section id="main-footer" class="white-section padded-section">
+            <p class="main-footer">© Copyright 2020 Thomas Plantin</p>
+        </section>
     </body>
-</html></html>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- My scripts -->
+    <script src="./../static/js/index.js"></script>
+</html>
+</html>

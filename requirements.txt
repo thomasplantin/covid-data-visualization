@@ -1,2 +1,11 @@
 flask
 flask-sqlalchemy
+pandas >= 0.24
+numpy
+# geopandas
+# shapely
+# fiona
+# pyproj
+# matplotlib >= 2.2.0
+# mapclassify >= 2.2.0
+requests
